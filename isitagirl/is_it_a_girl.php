@@ -6,9 +6,9 @@ class is_it_a_girl
 {
 	public function get_gender($fornavn)
 	{
-		$drengenavne = file('C:\xampp\htdocs\lectio\isitagirl\drengenavne.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-		$pigenavne = file('C:\xampp\htdocs\lectio\isitagirl\pigenavne-updated.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-		$unisexnavne = file('C:\xampp\htdocs\lectio\isitagirl\unisexnavne.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		$drengenavne = file(__DIR__.'/drengenavne.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		$pigenavne = file(__DIR__.'/pigenavne-updated.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		$unisexnavne = file(__DIR__.'/unisexnavne.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 		if(in_array($fornavn, $unisexnavne))
 		{
 			return 'ukendt';

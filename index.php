@@ -9,22 +9,23 @@ include('/isitagirl/is_it_a_girl.php');
 $l = new Lectio();
 $g = new is_it_a_girl();
 
-$elever = $l->get_elever_fra_gymnasie_sorteret('402');
+$elever = $l->get_elever_fra_gymnasie_sorteret('402'); //Henter alle elever fra Nakskov Gymnasium
 
-$for_sorting = array();
+$for_processing = array(); //Til at holde alle pigerne :D
 foreach($elever as $klasse=>$klassemedlemmer)
 {
 	foreach ($klassemedlemmer as $elev) {
-		$fornavn = $g->get_firstname($elev['navn']);
-		$gender = $g->get_gender($fornavn);
+		$fornavn = $g->get_firstname($elev['navn']); //Henter fornavnet
+		$gender = $g->get_gender($fornavn); //Bruger folkekirkens registre til at finde ud af om dreng eller pige
 		if($gender == 'pige')
 		{
-			$for_sorting = array(
+			$for_processing[] = array(
 				'navn' => $elev['navn'],
-				'klasse' => 
-				)
+				'klasse' => $klasse,
+				'gender' => $gender
+				);
 		}
 	}
 }
-
+var_dump($for_processing);
 ?>
