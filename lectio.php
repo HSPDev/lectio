@@ -7,7 +7,7 @@ Lavet af Henrik Pedersen
 og Daniel Poulsen.
 */
 include('simple_html_dom.php'); //Include vores class
-class Lectio
+class lectio
 {
 	private function get_content($url) {
 		$ch = curl_init();

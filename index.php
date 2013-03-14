@@ -6,7 +6,7 @@ set_time_limit(60);
 include('lectio.php');
 include('/isitagirl/is_it_a_girl.php');
 
-$l = new Lectio();
+$l = new lectio();
 $g = new is_it_a_girl();
 
 $elever = $l->get_elever_fra_gymnasie_sorteret('402'); //Henter alle elever fra Nakskov Gymnasium
